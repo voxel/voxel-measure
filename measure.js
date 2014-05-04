@@ -41,7 +41,11 @@ MeasurePlugin.prototype.disable = function() {
 
 // represent a vec3 for a coordinate as a string (x,y,z)
 var strCoords = function(pos) {
-  return '(' + asarray(pos).join(',') + ')';
+  return '(' + asarray(pos)
+    .map(function(x) {
+      return x.toFixed(1) // show one decimal point
+    })
+    .join(', ') + ')';
 }
 
 MeasurePlugin.prototype.use = function(held, target) {
@@ -52,7 +56,7 @@ MeasurePlugin.prototype.use = function(held, target) {
     var endPos = vec3.fromValues(this.player.position.x, this.player.position.y, this.player.position.z);
     var distance = vec3.distance(this.startPos, endPos);
 
-    this.console.log(distance + ' from '+strCoords(this.startPos)+' - '+strCoords(endPos));
+    this.console.log(distance.toFixed(1) + ' from '+strCoords(this.startPos)+' - '+strCoords(endPos));
 
     this.startPos = undefined;
   }
