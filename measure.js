@@ -30,7 +30,8 @@ function MeasurePlugin(game, opts) {
 MeasurePlugin.prototype.enable = function() {
   this.registry.registerItem('tapeMeasure', {
     itemTexture: 'i/paper', // TODO
-    onUse: this.use.bind(this)
+    onUse: this.use.bind(this),
+    displayName: 'Tape Measure'
   });
   if (this.recipes && this.registerRecipes) {
     this.recipes.registerAmorphous(['stick', 'stick'], ['tapeMeasure']); // TODO: better recipe, with string
