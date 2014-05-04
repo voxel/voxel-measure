@@ -38,11 +38,7 @@ MeasurePlugin.prototype.disable = function() {
 
 // represent a vec3 for a coordinate as a string (x,y,z)
 var strCoords = function(pos) {
-  return '(' + asarray(pos)
-    .map(function(x) {
-      return x.toFixed(1) // show one decimal point
-    })
-    .join(', ') + ')';
+  return '(' + asarray(pos).join(', ') + ')';
 }
 
 MeasurePlugin.prototype.use = function(held, target) {
