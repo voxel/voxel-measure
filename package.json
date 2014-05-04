@@ -1,6 +1,6 @@
 {
   "name": "voxel-measure",
-  "description": "",
+  "description": "tape measure to measure distance between blocks (voxel.js plugin)",
   "version": "0.0.1",
   "main": "measure.js",
   "repository": {
@@ -8,7 +8,8 @@
     "url": "git@github.com:deathcap/voxel-measure.git"
   },
   "keywords": [
-    "voxel"
+    "voxel",
+    "distance"
   ],
   "dependencies": {
     "gl-matrix": "^2.2.1",
