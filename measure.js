@@ -18,6 +18,9 @@ function MeasurePlugin(game, opts) {
   this.console = game.plugins.get('voxel-console');
   if (!this.console) throw new Error('voxel-measure requires voxel-console plugin');
 
+  this.recipes = game.plugins.get('voxel-recipes'); // optional
+  this.registerRecipes = opts.registerRecipe !== undefined ? opts.registerRecipe : true;
+
   this.startPos = undefined;
   this.endPos = undefined;
 
@@ -29,7 +32,9 @@ MeasurePlugin.prototype.enable = function() {
     itemTexture: 'i/paper', // TODO
     onUse: this.use.bind(this)
   });
-  // TODO: recipe
+  if (this.recipes && this.registerRecipes) {
+    this.recipes.registerAmorphous(['stick', 'stick'], ['tapeMeasure']); // TODO: better recipe, with string
+  }
 };
 
 MeasurePlugin.prototype.disable = function() {
