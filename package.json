@@ -2,6 +2,7 @@
   "name": "voxel-measure",
   "description": "",
   "version": "0.0.1",
+  "main": "measure.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:deathcap/voxel-measure.git"
@@ -10,6 +11,8 @@
     "voxel"
   ],
   "dependencies": {
+    "gl-matrix": "^2.2.1",
+    "asarray": "^0.1.0"
   },
   "license": "MIT"
 }
