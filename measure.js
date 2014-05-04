@@ -39,15 +39,20 @@ MeasurePlugin.prototype.disable = function() {
   // TODO: unregister item
 };
 
+// represent a vec3 for a coordinate as a string (x,y,z)
+var strCoords = function(pos) {
+  return '(' + asarray(pos).join(',') + ')';
+}
+
 MeasurePlugin.prototype.use = function(held, target) {
   if (!this.startPos) {
     this.startPos = vec3.fromValues(this.player.position.x, this.player.position.y, this.player.position.z);
-    this.console.log('Starting position ('+asarray(this.startPos).join(',')+')');
+    this.console.log('Starting position '+strCoords(this.startPos));
   } else {
     var endPos = vec3.fromValues(this.player.position.x, this.player.position.y, this.player.position.z);
     var distance = vec3.distance(this.startPos, endPos);
 
-    this.console.log(distance + ' from ('+asarray(this.startPos).join(',')+') - ('+asarray(endPos).join(',')+')');
+    this.console.log(distance + ' from '+strCoords(this.startPos)+' - '+strCoords(endPos));
 
     this.startPos = undefined;
   }
