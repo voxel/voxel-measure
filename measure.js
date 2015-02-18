@@ -1,7 +1,6 @@
 'use strict';
 
-var glm = require('gl-matrix');
-var vec3 = glm.vec3;
+var vec3 = require('gl-vec3');
 var asarray = require('asarray');
 
 module.exports = function(game, opts) {
