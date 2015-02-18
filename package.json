@@ -13,7 +13,6 @@
   ],
   "dependencies": {
     "asarray": "^0.1.0",
-    "gl-matrix": "^2.2.1",
     "gl-vec3": "^1.0.3"
   },
   "license": "MIT"
